@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "SENA ADSO - Guía 7 (Express + MySQL)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" }
+  ],
+  "item": [
+    {
+      "name": "1. POST Crear producto",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Teclado Mecánico Pro\",\n  \"precio\": 280000,\n  \"categoria\": \"Periféricos\",\n  \"stock\": 20\n}" },
+        "url": "{{baseUrl}}/api/productos"
+      }
+    },
+    {
+      "name": "2. GET Listar productos",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/productos" }
+    },
+    {
+      "name": "3. GET Producto por ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/productos/1" }
+    },
+    {
+      "name": "4. PUT Actualizar producto",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Teclado Mecánico Pro RGB\",\n  \"precio\": 300000,\n  \"categoria\": \"Periféricos\",\n  \"stock\": 25\n}" },
+        "url": "{{baseUrl}}/api/productos/1"
+      }
+    },
+    {
+      "name": "5. DELETE Eliminar producto",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/api/productos/1" }
+    },
+    {
+      "name": "6. GET Productos por categoría",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/productos/categoria/Periféricos" }
+    },
+    {
+      "name": "7. POST Registro de usuario",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Aprendiz SENA\",\n  \"email\": \"aprendiz@sena.edu.co\",\n  \"password\": \"Secreto123\"\n}" },
+        "url": "{{baseUrl}}/api/usuarios/registro"
+      }
+    },
+    {
+      "name": "8. POST Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"email\": \"aprendiz@sena.edu.co\",\n  \"password\": \"Secreto123\"\n}" },
+        "url": "{{baseUrl}}/api/usuarios/login"
+      }
+    },
+    {
+      "name": "9. GET Listar usuarios",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/usuarios" }
+    },
+    {
+      "name": "10. GET Estadísticas",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/reportes/estadisticas" }
+    }
+  ]
+}
